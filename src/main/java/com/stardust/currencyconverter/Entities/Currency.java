@@ -1,18 +1,17 @@
 package com.stardust.currencyconverter.Entities;
+import java.util.*;
 
-import jakarta.persistence.Entity;
-
-import java.util.HashMap;
-import java.util.Map;
-
-@Entity
 public class Currency {
     private final String name;
-    private final Map<String, Double> rates;
+    private Map<String, Double> rates;
 
     public Currency(String cName) {
         name = cName;
         rates = new HashMap<>();
+    }
+
+    public void setRates(Map<String, Double> rates) {
+        this.rates = rates;
     }
 
     public Double getConversionByName(String conversion) {
@@ -31,10 +30,6 @@ public class Currency {
         rates.put(name, value);
     }
 
-    public static Map<String, Double> getConversionRatesFromApi() throws Exception {
-        throw new Exception("Not yet implemented");
-    }
-
     @Override
     public String toString() {
         System.out.println(name + ":");
@@ -43,6 +38,6 @@ public class Currency {
             System.out.println(" " + name + " " + rates.get(name));
         }
         System.out.println("}");
-        return null;
+        return "";
     }
 }
