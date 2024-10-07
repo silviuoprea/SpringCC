@@ -1,4 +1,5 @@
 package com.stardust.currencyconverter.Entities;
+
 import java.util.*;
 
 public class Currency {
